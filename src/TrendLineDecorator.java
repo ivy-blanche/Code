@@ -1,24 +1,20 @@
 public class TrendLineDecorator extends DisplayDecorator {
-    private static Double lastValue = null;
+    private Double lastValue = null;
 
-    public TrendLineDecorator(Display decoratedDisplay) {
-        super(decoratedDisplay);
+    public TrendLineDecorator(Display display) {
+        super(display);
     }
 
     @Override
-    public void show(double temperature) {
-        super.show(temperature);
+    public void show(double value) {
+        super.show(value);
         if (lastValue != null) {
-            if (temperature > lastValue) {
-                System.out.println(" (↑ Rising)");
-            } else if (temperature < lastValue) {
-                System.out.println(" (↓ Falling)");
-            } else {
-                System.out.println(" (→ Stable)");
-            }
+            if (value > lastValue) System.out.println(" (↑ Rising)");
+            else if (value < lastValue) System.out.println(" (↓ Falling)");
+            else System.out.println(" (→ Stable)");
         } else {
             System.out.println(" (no previous data)");
         }
-        lastValue = temperature;
+        lastValue = value;
     }
 }

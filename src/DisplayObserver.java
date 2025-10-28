@@ -6,7 +6,8 @@ public class DisplayObserver implements Observer {
     }
 
     @Override
-    public void update(double temperature) {
-        display.show(temperature);
+    public void update(double value) {
+        display.show(value);
+        System.out.println("---------------------");
     }
 }

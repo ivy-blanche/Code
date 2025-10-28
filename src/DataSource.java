@@ -26,8 +26,4 @@ public class DataSource implements Subject {
         this.temperature = temperature;
         notifyObservers();
     }
-
-    public double getTemperature() {
-        return temperature;
-    }
 }

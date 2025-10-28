@@ -1,12 +1,11 @@
 public abstract class DisplayDecorator implements Display {
-    protected Display decoratedDisplay;
-
-    public DisplayDecorator(Display decoratedDisplay) {
-        this.decoratedDisplay = decoratedDisplay;
+    protected Display display;
+    public DisplayDecorator(Display display) {
+        this.display = display;
     }
 
     @Override
-    public void show(double temperature) {
-        decoratedDisplay.show(temperature);
+    public void show(double value) {
+        display.show(value);
     }
 }
