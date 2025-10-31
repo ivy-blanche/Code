@@ -1,3 +1,7 @@
+package display.decorator;
+
+import display.base.Display;
+
 public abstract class DisplayDecorator implements Display {
     protected Display display;
     public DisplayDecorator(Display display) {

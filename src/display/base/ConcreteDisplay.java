@@ -1,3 +1,5 @@
+package display.base;
+
 public class ConcreteDisplay implements Display {
     @Override
     public void show(double temperature) {

@@ -1,3 +1,7 @@
+package display.decorator;
+
+import display.base.Display;
+
 public class TrendLineDecorator extends DisplayDecorator {
     private Double lastValue = null;
 
@@ -9,7 +13,7 @@ public class TrendLineDecorator extends DisplayDecorator {
     public void show(double value) {
         super.show(value);
         if (lastValue != null) {
-            if (value > lastValue) System.out.println(" (↑ Rising)");
+            if (value > lastValue) System.out.print(" (↑ Rising)");
             else if (value < lastValue) System.out.println(" (↓ Falling)");
             else System.out.println(" (→ Stable)");
         } else {

@@ -1,3 +1,12 @@
+import display.base.Display;
+import display.chart.KLineChart;
+import display.chart.LineChart;
+import display.decorator.TrendLineDecorator;
+import display.decorator.LabelDecorator;
+import observer.DisplayObserver;
+import subject.DataSource;
+
+
 public class Main {
     public static void main(String[] args) throws InterruptedException {
         DataSource sensor = new DataSource();

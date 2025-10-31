@@ -1,4 +1,5 @@
-import java.util.List;
+package subject;
+import observer.Observer;
 
 public interface Subject {
     void registerObserver(Observer o);
