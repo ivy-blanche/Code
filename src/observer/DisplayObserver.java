@@ -1,11 +1,11 @@
 package observer;
 
-import display.base.Display; // added import
+import display.base.Display;
 
 public class DisplayObserver implements Observer {
-    private Display display; // changed type to display.base.Display
+    private Display display;
 
-    // constructor now accepts display.base.Display
+
     public DisplayObserver(Display display) {
         this.display = display;
     }
