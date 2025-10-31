@@ -1,5 +1,5 @@
 package display.base;
 
 public interface Display {
-    void show(double temperature);
+    void show(double price);
 }

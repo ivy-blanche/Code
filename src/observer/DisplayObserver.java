@@ -11,7 +11,7 @@ public class DisplayObserver implements Observer {
     }
 
     @Override
-    public void update(double value) {
-        display.show(value);
+    public void update(double price) {
+        display.show(price);
     }
 }

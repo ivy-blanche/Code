@@ -8,9 +8,11 @@ import java.util.List;
 
 public class DataSource implements Subject {
     private List<Observer> observers = new ArrayList<>();
-    private double temperature;
+    private double price;
 
     @Override
+    //java的多态性允许接口类型作为方法的参数
+    //但是o必须指向实现了observer接口的类的对象
     public void registerObserver(Observer o) {
         observers.add(o);
     }
@@ -23,12 +25,12 @@ public class DataSource implements Subject {
     @Override
     public void notifyObservers() {
         for (Observer o : observers) {
-            o.update(temperature);
+            o.update(price);
         }
     }
 
-    public void setTemperature(double temperature) {
-        this.temperature = temperature;
+    public void setPrice(double price) {
+        this.price = price;
         notifyObservers();
     }
 }
