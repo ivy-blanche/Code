@@ -1,6 +1,7 @@
+// src/subject/Subject.java（保持接口稳定性，仅实现类变化）
 package subject;
 import observer.Observer;
-//定义被观察者管理和通知观察者的方法
+
 public interface Subject {
     void registerObserver(Observer o);
     void removeObserver(Observer o);

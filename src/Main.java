@@ -1,3 +1,4 @@
+// src/Main.java（修改）
 import display.base.Display;
 import display.chart.KLineChart;
 import display.chart.LineChart;
@@ -6,30 +7,31 @@ import display.decorator.LabelDecorator;
 import observer.DisplayObserver;
 import subject.DataSource;
 
-
 public class Main {
     public static void main(String[] args) throws InterruptedException {
-        DataSource sensor = new DataSource();
+        // 初始化被观察者（指定股票代码）
+        DataSource stockSource = new DataSource("A股-600000");
 
-        // 第一个观察者：折线图 + 标签 + 趋势
+        // 装饰者链1：折线图 + 标签 + 趋势
         Display lineChart = new LineChart();
         lineChart = new LabelDecorator(lineChart);
         lineChart = new TrendLineDecorator(lineChart);
         DisplayObserver observer1 = new DisplayObserver(lineChart);
 
-        // 第二个观察者：K线图 + 标签
+        // 装饰者链2：K线图 + 标签 + 趋势
         Display klineChart = new KLineChart();
         klineChart = new LabelDecorator(klineChart);
+        klineChart = new TrendLineDecorator(klineChart);
         DisplayObserver observer2 = new DisplayObserver(klineChart);
 
-        // 注册观察者（必须在数据更新前注册）
-        sensor.registerObserver(observer1);
-        sensor.registerObserver(observer2);
+        // 注册观察者
+        stockSource.registerObserver(observer1);
+        stockSource.registerObserver(observer2);
 
         // 模拟数据更新
-        double[] stockPrices = {102.5, 103.2, 103.2, 102.8, 104.0};
-        for (double price : stockPrices) {
-            sensor.setPrice(price);
+        double[] prices = {102.5, 103.2, 103.2, 102.8, 104.0};
+        for (double price : prices) {
+            stockSource.setPrice(price);
             Thread.sleep(1000);
         }
     }
