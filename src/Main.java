@@ -23,9 +23,11 @@ public class Main {
         klineChart = new TrendLineDecorator(klineChart);
         DisplayObserver observer2 = new DisplayObserver(klineChart);
 
+
         // 注册观察者
         stockSource.registerObserver(observer1);
         stockSource.registerObserver(observer2);
+
 
         // 模拟数据变化
         double[] prices = {102.5, 103.2, 103.2, 102.8, 104.0};

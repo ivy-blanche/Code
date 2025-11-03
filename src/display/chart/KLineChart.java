@@ -17,7 +17,7 @@ public class KLineChart implements Display {
         double low = Math.min(open, currentPrice) - 0.5;
 
         // 核心数据展示，不包含换行
-        System.out.printf("🕯️ KLineChart: %s O:%.2f C:%.2f H:%.2f L:%.2f",
+        System.out.printf("🕯️ KLineChart: %s O:%.2f C:%.2f H:%.2f L:%.2f%n",
                 data.getStockCode(), open, currentPrice, high, low);
 
         lastPrice = currentPrice; // 更新状态

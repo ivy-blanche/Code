@@ -10,7 +10,7 @@ public class LineChart implements Display {
     @Override
     public void show(StockData data) {
         // 仅输出核心数据，换行由装饰者统一控制
-        System.out.printf("📈 LineChart: %s 价格 %.2f元",
+        System.out.printf("📈 LineChart: %s 价格 %.2f元%n",
                 data.getStockCode(), data.getPrice());
     }
 }
