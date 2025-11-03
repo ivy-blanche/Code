@@ -1,4 +1,3 @@
-// src/subject/DataSource.java（修改）
 package subject;
 
 import observer.Observer;

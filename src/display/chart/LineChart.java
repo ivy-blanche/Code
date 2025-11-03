@@ -1,4 +1,3 @@
-// src/display/chart/LineChart.java（修改）
 package display.chart;
 
 import display.base.Display;

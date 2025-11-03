@@ -1,4 +1,3 @@
-// src/observer/DisplayObserver.java（修改）
 package observer;
 
 import display.base.Display;

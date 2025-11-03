@@ -1,4 +1,3 @@
-// src/observer/Observer.java（修改）
 package observer;
 
 import subject.StockData;

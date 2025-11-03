@@ -1,4 +1,3 @@
-// src/Main.java（修改）
 import display.base.Display;
 import display.chart.KLineChart;
 import display.chart.LineChart;
@@ -28,7 +27,7 @@ public class Main {
         stockSource.registerObserver(observer1);
         stockSource.registerObserver(observer2);
 
-        // 模拟数据更新
+        // 模拟数据变化
         double[] prices = {102.5, 103.2, 103.2, 102.8, 104.0};
         for (double price : prices) {
             stockSource.setPrice(price);

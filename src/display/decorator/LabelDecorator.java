@@ -1,4 +1,3 @@
-// src/display/decorator/LabelDecorator.java（修改）
 package display.decorator;
 
 import display.base.Display;
